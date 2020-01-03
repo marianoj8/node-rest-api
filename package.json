@@ -4,7 +4,9 @@
   "description": "[![GitHub stars]](https://github.com/marianoj8/litroft-dev-mono/stargazers)",
   "main": "index.js",
   "scripts": {
-    "ts": "tsc -w"
+    "ts": "tsc -w",
+    "dev": "nodemon ./dist/server.js",
+    "start": "tsc && nodemon ./dist/server.js"
   },
   "keywords": [],
   "author": "",

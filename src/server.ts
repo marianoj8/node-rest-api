@@ -1,4 +1,5 @@
 import express from 'express';
+import morgan from 'morgan';
 
 class Server {
 
@@ -14,6 +15,7 @@ class Server {
     // Configuração do servidor
     config() {
         this.app.set('port', process.env.PORT || 3000);
+        this.app.use(morgan('dev'));
     }
 
     // Onde serão definido as rotas

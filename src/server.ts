@@ -10,13 +10,14 @@ class Server {
         //Inicializando a applicacao exprecess.
         this.app = express();
         this.config(); //setando configuracoes.
+        this.routes(); // setando rotas.
     }
 
 
     // Configuração do servidor
     config() {
         this.app.set('port', process.env.PORT || 3000);
-        
+
         //Middlewares
         this.app.use(morgan('dev'));
         this.app.use(helmet());
@@ -24,7 +25,7 @@ class Server {
 
     // Onde serão definido as rotas
     routes() {
-
+        this.app.get(('/'), (req, res) => res.send('Hello, world from REST API with Node!!'));
     }
 
     //Inicialização do servidor

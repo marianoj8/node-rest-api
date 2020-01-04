@@ -6,6 +6,7 @@ class IndexRoutes {
 
     constructor() {
         this.router = Router();
+        this.routers(); // Invocando o metodo routers
     }
 
     routers(){

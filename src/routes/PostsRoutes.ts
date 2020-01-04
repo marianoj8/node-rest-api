@@ -2,8 +2,10 @@ import { Request, Response, Router } from 'express';
 
 class PostsRoutes {
 
-    constructor() {
+    router: Router;
 
+    constructor() {
+        this.router = Router();
     }
 
     //Todas as rotas dos Posts

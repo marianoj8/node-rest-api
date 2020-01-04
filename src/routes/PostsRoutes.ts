@@ -14,7 +14,7 @@ class PostsRoutes {
         this.router.get('/posts', this.listPost);
     }
 
-    getPostById() {
+    getPostByUrl() {
 
     }
 

@@ -1,5 +1,7 @@
 import { Request, Response, Router } from 'express';
 
+import Post from '../shared/model/Post';
+
 class PostsRoutes {
 
     router: Router;

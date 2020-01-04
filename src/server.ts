@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import morgan from 'morgan';
 import helmet from 'helmet';
 
@@ -18,6 +19,15 @@ class Server {
 
     // Configuração do servidor
     config() {
+        //Connecting to MongoDB
+        const MONGO_URI = 'mongodb://localhost/noderestapi';
+        mongoose.set('useFindAndModify', false);
+        mongoose.connect(MONGO_URI || process.env.MONGODB_URL, {
+            useNewUrlParser: true,
+            useCreateIndex: true
+        });
+        
+        // Settings
         this.app.set('port', process.env.PORT || 3000);
 
         //Middlewares
@@ -27,7 +37,7 @@ class Server {
 
     // Onde serão definido as rotas
     routes() {
-       this.app.use(indexRoutes);
+        this.app.use(indexRoutes);
     }
 
     //Inicialização do servidor

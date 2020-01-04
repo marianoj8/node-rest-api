@@ -45,7 +45,7 @@ class Server {
     // Onde serão definido as rotas
     routes() {
         this.app.use(indexRoutes);
-        this.app.use('/api', postRoutes);
+        this.app.use('/api/post', postRoutes);
     }
 
     //Inicialização do servidor

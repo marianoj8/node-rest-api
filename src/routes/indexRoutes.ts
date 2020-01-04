@@ -9,9 +9,10 @@ class IndexRoutes {
         this.routers(); // Invocando o metodo routers
     }
 
-    routers(){
+    routers() {
         this.router.get(('/'), (req, res) => res.send('Hello, world from REST API with Node!!'));
-    }    
+    }
 }
 
 const indexRoutes = new IndexRoutes();
+indexRoutes.routers();

@@ -31,3 +31,5 @@ class PostsRoutes {
     }
 
 }
+
+const postRoutes = new PostsRoutes();

@@ -10,15 +10,15 @@ class PostsRoutes {
 
     //Todas as rotas dos Posts
     routes() {
-
+        this.router.get('/posts', this.listPost);
     }
 
     getPostById() {
 
     }
 
-    listPost() {
-
+    listPost(req: Request, res: Response) {
+        res.send('List of posts!');
     }
 
     createPost() {

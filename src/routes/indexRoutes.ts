@@ -16,3 +16,5 @@ class IndexRoutes {
 
 const indexRoutes = new IndexRoutes();
 indexRoutes.routers();
+
+export default indexRoutes.router;

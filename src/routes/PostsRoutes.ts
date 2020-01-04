@@ -28,6 +28,10 @@ class PostsRoutes {
 
     }
 
+    updatePost() {
+
+    }
+
     deletePost() {
 
     }

@@ -11,7 +11,7 @@ class PostsRoutes {
 
     //Todas as rotas dos Posts
     routes() {
-        this.router.get('/posts', this.listPost);
+        this.router.get('/', this.listPost);
     }
 
     getPostByUrl() {

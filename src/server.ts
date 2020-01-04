@@ -34,6 +34,7 @@ class Server {
 
         //Middlewares
         this.app.use(morgan('dev'));
+        this.app.use(express.json()); //dando suport ao formato JSON
         this.app.use(helmet());
         this.app.use(compression());
         this.app.use(cors()); //Removendo o cors

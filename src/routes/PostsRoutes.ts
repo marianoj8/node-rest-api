@@ -13,6 +13,7 @@ class PostsRoutes {
     routes() {
         this.router.get('/:url', this.getPostByUrl);
         this.router.get('/', this.listPost);
+        this.router.post('/', this.createPost);
     }
 
     getPostByUrl() {

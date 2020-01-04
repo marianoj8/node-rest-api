@@ -5,4 +5,21 @@ class PostsRoutes {
     constructor() {
 
     }
+
+    getPostById(){
+
+    }
+
+    listPost(){
+
+    }
+
+    createPost(){
+
+    }
+
+    deletePost(){
+        
+    }
+
 }

@@ -2,6 +2,8 @@ import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 
+import indexRoutes from './routes/indexRoutes';
+
 class Server {
 
     private app: express.Application;
@@ -25,7 +27,7 @@ class Server {
 
     // Onde serão definido as rotas
     routes() {
-       
+       this.app.use(indexRoutes);
     }
 
     //Inicialização do servidor

@@ -6,6 +6,7 @@ class PostsRoutes {
 
     constructor() {
         this.router = Router();
+        this.routes();
     }
 
     //Todas as rotas dos Posts

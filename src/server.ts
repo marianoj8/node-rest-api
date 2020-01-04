@@ -25,7 +25,7 @@ class Server {
 
     // Onde serão definido as rotas
     routes() {
-        this.app.get(('/'), (req, res) => res.send('Hello, world from REST API with Node!!'));
+       
     }
 
     //Inicialização do servidor

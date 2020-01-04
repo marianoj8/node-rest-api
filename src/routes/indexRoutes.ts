@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 
-class IndexRouters {
+class IndexRoutes {
 
     router: Router;
 
@@ -9,6 +9,6 @@ class IndexRouters {
     }
 
     routers(){
-        
+        this.router.get(('/'), (req, res) => res.send('Hello, world from REST API with Node!!'));
     }    
 }

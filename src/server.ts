@@ -36,6 +36,7 @@ class Server {
         this.app.use(morgan('dev'));
         this.app.use(helmet());
         this.app.use(compression());
+        this.app.use(cors()); //Removendo o cors
     }
 
     // Onde serão definido as rotas

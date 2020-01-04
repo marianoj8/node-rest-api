@@ -10,7 +10,7 @@ class IndexRoutes {
     }
 
     routers() {
-        this.router.get(('/'), (req, res) => res.send('Hello, world from REST API with Node!!'));
+        this.router.get(('/'), (req, res) => res.send('Hello, world from REST API with Node!! \nAPI: /api/post/'));
     }
 }
 

@@ -33,3 +33,4 @@ class PostsRoutes {
 }
 
 const postRoutes = new PostsRoutes();
+export default postRoutes.router;

@@ -1,25 +1,30 @@
 import { Request, Response, Router } from 'express';
 
 class PostsRoutes {
-    
+
     constructor() {
 
     }
 
-    getPostById(){
+    //Todas as rotas dos Posts
+    routes() {
 
     }
 
-    listPost(){
+    getPostById() {
 
     }
 
-    createPost(){
+    listPost() {
 
     }
 
-    deletePost(){
-        
+    createPost() {
+
+    }
+
+    deletePost() {
+
     }
 
 }

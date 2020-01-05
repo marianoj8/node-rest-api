@@ -1,8 +1,11 @@
 import { Document } from 'mongoose';
 
-interface IPost extends Document {
+import { IUser } from './IUser';
+
+export interface IPost extends Document {
     titulo: string,
     url: string,
     conteudo: string,
-    imagem?: string
+    imagem?: string,
+    user: IUser
 }

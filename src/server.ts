@@ -3,10 +3,11 @@ import mongoose from 'mongoose';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import compression from 'compression';
-import cors from 'cors'; 
+import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 import postRoutes from './routes/PostsRoutes';
+import userRoutes from './routes/UserRoutes';
 
 class Server {
 
@@ -27,16 +28,17 @@ class Server {
         mongoose.set('useFindAndModify', false);
         mongoose.connect(MONGO_URI || process.env.MONGODB_URL, {
             useNewUrlParser: true,
-            useCreateIndex: true
+            useCreateIndex: true,
+            useUnifiedTopology: true
         });
-        
+
         // Settings
         this.app.set('port', process.env.PORT || 3000);
 
         //Middlewares
         this.app.use(morgan('dev'));
         this.app.use(express.json()); //dando suport ao formato JSON
-        this.app.use(express.urlencoded({extended: false})); // Validacao e suporte a formularios
+        this.app.use(express.urlencoded({ extended: false })); // Validacao e suporte a formularios
         this.app.use(helmet());
         this.app.use(compression());
         this.app.use(cors()); //Removendo o cors
@@ -45,7 +47,8 @@ class Server {
     // Onde serão definido as rotas
     routes() {
         this.app.use(indexRoutes);
-        this.app.use('/api/post', postRoutes);
+        this.app.use('/api/posts', postRoutes);
+        this.app.use('/api/users', userRoutes);
     }
 
     //Inicialização do servidor

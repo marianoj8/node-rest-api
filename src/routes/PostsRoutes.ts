@@ -1,10 +1,10 @@
 import { Request, Response, Router } from 'express';
 
-import Post from '../shared/model/Post';
+import Post from '../shared/schema/Post';
 
 class PostsRoutes {
 
-    router: Router;
+    public router: Router;
 
     constructor() {
         this.router = Router();
@@ -20,24 +20,30 @@ class PostsRoutes {
         this.router.delete('/:url', this.deletePost);
     }
 
-    getPostByUrl() {
-
+    public async getPostByUrl(req: Request, res: Response): Promise<Response> {
+        const post = await Post.findOne({ url: req.params.url }).populate('user');
+        return res.json(post);
     }
 
-    listPost(req: Request, res: Response) {
-        res.send('List of posts!');
+    public async listPost(req: Request, res: Response): Promise<Response> {
+        const post = await Post.find().populate('user');
+        return res.json(post);
     }
 
-    createPost() {
-
+    public async createPost(req: Request, res: Response): Promise<Response> {
+        const post = await Post.create(req.body);
+        return res.json(post);
     }
 
-    updatePost() {
-
+    public async updatePost(req: Request, res: Response): Promise<Response> {
+        const { url } = req.params;
+        const post = Post.findOneAndUpdate({ url }, req.body, { new: true });
+        return res.json(post);
     }
 
-    deletePost() {
-
+    public async deletePost(req: Request, res: Response): Promise<void> {
+        const { url } = req.params;
+        await Post.findOneAndDelete({ url });
     }
 
 }

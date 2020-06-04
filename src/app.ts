@@ -30,7 +30,7 @@ class App {
 
     private database(): void {
         //Connecting to MongoDB
-        const MONGO_URI = 'mongodb://localhost/noderestapi';
+        const MONGO_URI = 'mongodb://localhost:2717/noderestapi';
         mongoose.set('useFindAndModify', true);
         mongoose.connect(MONGO_URI || process.env.MONGODB_URL, {
             useNewUrlParser: true,

@@ -9,6 +9,7 @@ const routes = Router();
 //Todas as rotas do controlador UserController
 routes.get('/user/:username', UserContoller.getByUrl);
 routes.get('/user', UserContoller.list);
+routes.get('/user/n/:nome', UserContoller.findByName);
 routes.post('/user', [], UserContoller.store);
 routes.put('/user/:username', UserContoller.update);
 routes.delete('/user/:username', UserContoller.delete);

@@ -16,6 +16,12 @@ class UserController {
         return res.json(users);
     }
 
+    public async findByName(req: Request, res:Response): Promise<Response>{
+        const user = await User.find({nome: {$regex: req.params.nome}});
+        res.status(200);
+        return res.json(user);
+    }
+
     public async store(req: Request, res: Response): Promise<Response> {
         const user = await User.create(req.body);
         res.status(201);

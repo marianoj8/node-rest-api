@@ -30,7 +30,7 @@ class App {
 
     private database(): void {
         //Connecting to MongoDB
-        const MONGO_URI = 'mongodb://localhost:2717/noderestapi';
+        const MONGO_URI = 'mongodb://localhost:2717/kipper-reactor';
         mongoose.set('useFindAndModify', true);
         mongoose.connect(MONGO_URI || process.env.MONGODB_URL, {
             useNewUrlParser: true,
@@ -40,7 +40,7 @@ class App {
     }
 
     private routes(): void {
-        this.express.use('/api', routes);
+        this.express.use('/api/v1', routes);
     }
 }
 
